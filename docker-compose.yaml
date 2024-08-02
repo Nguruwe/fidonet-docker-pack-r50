@@ -1,0 +1,38 @@
+services:
+  binkd:
+    container_name: fido
+    hostname: fido
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      FIDOCONFIG: /etc/husky/config
+    command:
+      - /bin/sh
+      - -c
+      - |
+        echo 'export PATH="/usr/local/sbin/fido:$PATH"' >> ~/.bashrc
+        echo 'alias gded="golded -C/var/config/golded.cfg"' >> ~/.bashrc
+        echo 'alias poll="binkd -cp /etc/binkd/binkd.cfg -P2:5020/715"' >> ~/.bashrc
+        /usr/local/sbin/fido/makeGoldedConfig
+        /usr/local/sbin/fido/makeBinkdConfig
+        /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+
+    networks:
+      - default
+    restart: always
+#    ports:
+#      - 7681:7681
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./etc/binkd:/etc/binkd:ro
+      - ./MySecData:/etc/fido:ro
+      - ./etc/golded:/etc/golded:ro
+      - ./etc/husky:/etc/husky
+      - ./sbin:/usr/local/sbin/fido:ro
+      - ./log:/var/log/fido
+      - ./var/spool:/var/spool/ftn
+      - ./var/config:/var/config
+    ### connect Supervisor
+      - ./etc/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
+    ### connect Supervisor
