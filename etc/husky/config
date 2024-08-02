@@ -1,0 +1,79 @@
+# main fidoconfig file
+
+include /etc/fido/mydata
+
+outbound /var/spool/ftn/outbound
+
+#name Pigfarm
+
+screenloglevels 2345789,A-C
+loglevels 1345789,A-F Q
+
+inbound /var/spool/ftn/inbound/insecure
+protinbound /var/spool/ftn/inbound
+LocalInbound /var/spool/ftn/inbound/local
+tempinbound /var/spool/ftn/tmp/inbound
+tempoutbound /var/spool/ftn/tmp/outbound
+
+logfiledir /var/log/fido
+echotosslog /var/log/fido/toss.log
+importlog /var/log/fido/import.log
+
+dupehistorydir /var/spool/ftn/dupes
+nodelistdir /var/spool/ftn/nodelist
+msgbasedir /var/spool/ftn/msgbase
+fileboxesdir /var/spool/ftn/fileboxes
+fileareabasedir /var/spool/ftn/filebase
+passfileareadir /var/spool/ftn/transit
+
+linkwithimportlog kill
+separatebundles yes
+disablepid yes
+disabletid yes
+# hptperlfile /home/username/fido/lib/hptfunctions.pl
+pack zip zip -9 -j -q $a $f
+unpack "unzip -j -Loqq $a $f -d $p" 0 504b0304
+unpack  "arc eno $a $p'*.*'" 0 1a
+
+carboncopy PERSONAL.MAIL
+
+robotsarea NETMAIL
+
+robot default
+killrequests yes
+reportsattr loc pvt k/s npd
+
+robot areafix
+fromname Areafix robot
+robotorigin Areafix robot
+
+robot filefix
+fromname Filefix robot
+robotorigin Filefix robot
+reportsattr loc pvt k/s npd dir
+
+linkdefaults begin
+allowemptypktpwd secure
+packer zip
+areafixautocreate on
+areafixautocreatedefaults -b Jam -dupecheck del -dupehistory 14
+areafixautocreatefile /var/config/husky/areas
+filefixautocreate on
+filefixautocreatedefaults -p 90
+filefixautocreatefile /var/config/husky/fileareas
+echomailflavour direct
+forwardrequests off
+linkdefaults end
+
+Nodelist NODELIST
+NodelistFormat Standard
+FullUpdate /var/spool/ftn/filebase/fido/nodelisz/NODELIST
+
+Fidouserlist fidouser.lst
+
+include /etc/fido/links
+include /etc/fido/route
+include /etc/husky/peristentareas
+include /var/config/husky/areas
+
+include /var/config/husky/fileareas

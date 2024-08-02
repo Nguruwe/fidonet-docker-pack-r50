@@ -1,0 +1,5 @@
+# Areas definition
+netmailarea NETMAIL       /var/spool/ftn/msgbase/netmail       -b Jam
+badarea     BAD           /var/spool/ftn/msgbase/bad           -b Jam
+dupearea    DUPE          /var/spool/ftn/msgbase/dupe          -b Jam
+localarea   PERSONAL.MAIL /var/spool/ftn/msgbase/personal.mail -b Jam

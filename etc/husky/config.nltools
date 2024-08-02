@@ -1,0 +1,53 @@
+# Linux / UNIX  sample configuration for the nodelist tools
+
+# use "export FIDOCONFIG=/path/to/this/config.file" in the batch that
+# calls the tools, or in /etc/profile
+
+# === Generic settings ===
+
+# Make sure these unpackers are in your search path, esp. ARC 5.21!
+Unpack "/usr/local/bin/unzip -joLqq $a -d $p" 0 504b0304 
+Unpack "/usr/local/bin/unrar e -o+ -y -c- -p- $a $p/ >/dev/null" 0 52617221
+Unpack "/usr/local/bin/arc eno $a $p'/*.*'" 0 1a
+
+# Directory in which the nltools.log file will be stored:
+logFileDir /var/fido/log
+
+# Where the nodelist is and where the fidouser.lst goes:
+nodelistDir /var/fido/nodelist
+
+# Point this to any existing directory, the nltools do not use it:
+msgBaseDir /var/fido/msgbase
+
+# Filename of fidouser list (without path!)
+fidoUserList fidouser.lst
+
+# === Fidonet Worldwide Nodelist ===
+
+# nodelist base file name
+Nodelist nodelist
+
+# where nodediffs can be found (path + base filename)
+DiffUpdate /var/fido/filebase/nodediff/nodediff
+
+# where full updates can be found, if any (path + base filename)
+FullUpdate /var/fido/filebase/complete_nodelist/nodelist
+
+# format of this nodelist
+NodelistFormat Standard
+
+# === German R24 Fidonet Point list ===
+
+# nodelist base file name
+Nodelist points24
+
+# where nodediffs can be found (path + base filename)
+DiffUpdate /var/fido/filebase/24000/pr24diff
+
+# format of this nodelist
+Nodelistformat Point24
+
+# Points24 requires a default zone!
+DefaultZone 2
+
+
