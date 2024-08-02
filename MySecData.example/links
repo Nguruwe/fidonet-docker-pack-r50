@@ -1,0 +1,15 @@
+# Husky Link configuration
+
+Link [uplinkname] Uplink
+Aka [upllibknode] addr
+ourAka [youraddr]
+Password [password]
+EchoMailFlavour Crash
+areafixAutoCreateDefaults -a [youraddr] -b Jam -p 3650 -dupeCheck move -dupeHistory 14 -d "(fidonet) " -g fidonet
+linkMsgBaseDir /var/spool/ftn/msgbase/fido
+filebox /var/spool/ftn/filebase/fido
+forwardRequests on
+Packer zip
+LinkGrp fidonet
+AccessGrp fidonet
+

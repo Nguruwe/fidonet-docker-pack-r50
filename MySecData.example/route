@@ -1,0 +1,5 @@
+# default routes for hpt.
+# eg:
+# route crash 2:240/5853 1:* 2:* 3:* 4:* 5:*
+
+route crash [Your uplink] 1:* 2:* 3:* 4:* 5:*
