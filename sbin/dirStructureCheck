@@ -1,0 +1,41 @@
+#!/bin/bash
+
+function chkDir {
+
+if [ ! -d "$1" ]; then
+#    echo "dir $1 does not exist"
+    mkdir $1
+#else
+#    echo "dir $1 exist"
+fi
+
+}
+
+chkDir /var/config/husky
+
+chkDir /var/spool/ftn/dupes
+
+chkDir /var/spool/ftn/filebase
+chkDir /var/spool/ftn/filebase/fido
+
+chkDir /var/spool/ftn/fileboxes
+
+chkDir /var/spool/ftn/inbound
+chkDir /var/spool/ftn/inbound/insecure
+chkDir /var/spool/ftn/inbound/local
+
+chkDir /var/spool/ftn/msgbase
+chkDir /var/spool/ftn/msgbase/fido/
+
+chkDir /var/spool/ftn/nodelist
+
+chkDir /var/spool/ftn/outbound
+
+chkDir /var/spool/ftn/tmp
+chkDir /var/spool/ftn/tmp/inbound
+chkDir /var/spool/ftn/tmp/outbound
+
+chkDir /var/spool/ftn/transit
+
+touch /var/config/husky/areas
+touch /var/config/husky/fileareas
