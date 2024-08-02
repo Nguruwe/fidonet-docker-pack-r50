@@ -12,6 +12,10 @@ cp ./MySecData.example MySecData
 Fill necessary fields
 
 make build - build docker image
+
+make up - run container
+make down - stop container
+
 make fido - run container console
     poll - poll uplink
     hpt pack - pack outbound netmail
