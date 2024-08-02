@@ -1,0 +1,40 @@
+#!/bin/bash
+
+FILE='/var/config/binkd.inc'
+insertPosition=4
+
+if test -f "$FILE"; then
+    rm $FILE
+fi
+
+fconf2binkd $FILE
+
+# Move lines with numbers on $insertPosition
+function moveUp {
+    for lineNumber in $@
+    do
+        #get line by $LineNumber
+        line=$(awk "NR==$lineNumber" $FILE)
+
+        # delete line
+        sed -i "${lineNumber}d" $FILE
+
+        #insert line
+        sed -i "$insertPosition i $line" $FILE
+    done
+}
+
+IFS=$'\n'
+lines=$(grep -n "^domain" $FILE | cut -d: -f1)
+read -a lines -d '' <<< $lines
+moveUp "${lines[@]}"
+lines=$(grep -n 'domains:' $FILE | cut -d: -f1)
+moveUp $lines
+
+# Remove dupe emty lines
+#sed '/^$/N;/^\n$/D' $FILE
+#grep -A1 . $FILE | grep -v "^--$"
+sed '/^$/N;/^\n$/D' $FILE > /tmp/somefile.tmp
+cp /tmp/somefile.tmp $FILE
+rm /tmp/somefile.tmp
+

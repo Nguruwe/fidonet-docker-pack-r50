@@ -1,0 +1,2 @@
+#!/bin/bash
+fconf2golded /var/config/golded.cfg /etc/golded/goldedDefaults.cfg
