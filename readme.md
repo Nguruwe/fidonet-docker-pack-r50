@@ -21,5 +21,6 @@ make fido - run container console
     hpt pack - pack outbound netmail
     hpt toss - toss echomail
     hpt scan - scan and pack outbound echomail
-    hptutil - does not work, core dumped :-((
+    hptutil - does not work, core dumped :-(( Use sqpack to purge/pack bases
+    sqpack - purge/pack bases, eg: sqpack dupe netmail
 make golded - open golded session in docker container
