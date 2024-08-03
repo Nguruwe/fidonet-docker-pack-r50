@@ -1,7 +1,8 @@
 services:
-  binkd:
+  fidonet:
     container_name: fido
     hostname: fido
+    image: nguruwe/fidonet:latest
     build:
       context: .
       dockerfile: ./Dockerfile
