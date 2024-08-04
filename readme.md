@@ -10,8 +10,7 @@
 
 
 ### Dependencies:
-- docker (rootless)
-<https://docs.docker.com/engine/security/rootless/>
+- [docker (rootless)](https://docs.docker.com/engine/security/rootless/)
 - luit (need for session KOI8-R charset translation)
 - make (need for console commands)
 
