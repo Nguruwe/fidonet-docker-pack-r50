@@ -3,6 +3,8 @@
 - [Fidoconfig support](http://www.textfiles.com/fidonet-on-the-internet/husky/fidoconf.htm)
 - r50 cp866 charset
 - (No any automation yet)
+- (Only Fidonet point system tested)
+- (One password for session, packages, etc)
 
 ### Software
 - [binkd mailer](https://github.com/pgul/binkd)
@@ -18,16 +20,16 @@
 ### Usage:
 
 - cp ./MySecData.example MySecData
-- Fill necessary fields
-- Run make build to build docker image
-- Run make up to start container
-- Run make down to stop container
+- Fill necessary fields (your name, Fidonet address, uplink session parameters, etc)
+- Run 'make build' to build docker image
+- Run 'make up' to start container
+- Run 'make down' to stop container
 
-- make fido to access container console
+- Run 'make fido' to access container console, example commands:
 	- poll - poll uplink
 	- hpt pack - pack outbound netmail
 	- hpt toss - toss echomail
 	- hpt scan - scan and pack outbound echomail
 	- hptutil - does not work, core dumped :-(( Use sqpack to purge/pack bases
 	- sqpack - purge/pack bases, eg: sqpack dupe netmail
-- make golded - open golded session in docker container
+- Run 'make golded' to open golded session in docker container
