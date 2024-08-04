@@ -4,9 +4,10 @@
 - (No any automation yet)
 
 ### Software
-- binkd mailer
-- hpt tosser
-- golded msg editor
+- [Fidoconfig support](http://www.textfiles.com/fidonet-on-the-internet/husky/fidoconf.htm)
+- [binkd mailer](https://github.com/pgul/binkd)
+- [hpt tosser](https://github.com/huskyproject)
+- [golded+ msg editor](https://github.com/golded-plus/golded-plus)
 
 
 ### Dependencies:
