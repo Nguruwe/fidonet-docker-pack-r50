@@ -1,17 +1,16 @@
 ## Fidonet software pack in docker
 ### Features:
 - [Fidoconfig support](http://www.textfiles.com/fidonet-on-the-internet/husky/fidoconf.htm)
-- r50 cp866 charset
+- Z2R50 cp866 charset
 - No any automation yet
 - Only Fidonet point system tested
-- One password for session, packages, etc
+- One password for session, packages, etc.
 - amd64 arch support
 
 ### Software
 - [binkd mailer](https://github.com/pgul/binkd)
 - [hpt tosser](https://github.com/huskyproject)
-- [golded+ msg editor](https://github.com/golded-plus/golded-plus)
-
+- [GoldEd+ msg editor](https://github.com/golded-plus/golded-plus)
 
 ### Dependencies:
 - [docker (rootless)](https://docs.docker.com/engine/security/rootless/)
@@ -21,7 +20,7 @@
 ### Usage:
 
 - cp ./MySecData.example MySecData
-- Fill necessary fields (your name, Fidonet address, uplink session parameters, etc)
+- Fill necessary fields (your name, Fidonet address, uplink session parameters, etc.)
 - Run 'make build' to build docker image
 - Run 'make up' to start container
 - Run 'make down' to stop container
