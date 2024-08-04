@@ -2,9 +2,9 @@
 ### Features:
 - [Fidoconfig support](http://www.textfiles.com/fidonet-on-the-internet/husky/fidoconf.htm)
 - r50 cp866 charset
-- (No any automation yet)
-- (Only Fidonet point system tested)
-- (One password for session, packages, etc)
+- No any automation yet
+- Only Fidonet point system tested
+- One password for session, packages, etc
 
 ### Software
 - [binkd mailer](https://github.com/pgul/binkd)
