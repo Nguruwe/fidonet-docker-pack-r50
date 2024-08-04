@@ -5,6 +5,7 @@
 - No any automation yet
 - Only Fidonet point system tested
 - One password for session, packages, etc
+- amd64 arch support
 
 ### Software
 - [binkd mailer](https://github.com/pgul/binkd)
