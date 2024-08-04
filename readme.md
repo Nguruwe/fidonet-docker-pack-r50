@@ -1,10 +1,10 @@
 ## Fidonet software pack in docker
 ### Features:
+- [Fidoconfig support](http://www.textfiles.com/fidonet-on-the-internet/husky/fidoconf.htm)
 - r50 cp866 charset
 - (No any automation yet)
 
 ### Software
-- [Fidoconfig support](http://www.textfiles.com/fidonet-on-the-internet/husky/fidoconf.htm)
 - [binkd mailer](https://github.com/pgul/binkd)
 - [hpt tosser](https://github.com/huskyproject)
 - [golded+ msg editor](https://github.com/golded-plus/golded-plus)
