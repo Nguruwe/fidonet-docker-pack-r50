@@ -35,4 +35,4 @@
 - Run 'make golded' to open golded session in docker container
 
 ### Known issues:
-- GoldED+ crash widescreen terminal session if try nodelist access.
+- GoldED+ crashes widescreen terminal session if try nodelist access.
