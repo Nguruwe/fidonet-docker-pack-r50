@@ -15,7 +15,7 @@ services:
         /usr/local/sbin/fido/dirStructureCheck
         echo 'export PATH="/usr/local/sbin/fido:$PATH"' >> ~/.bashrc
         echo 'alias gded="golded -C/var/config/golded.cfg"' >> ~/.bashrc
-        echo 'alias poll="/usr/local/sbin/binkd -cp /etc/binkd/binkd.cfg -P2:5020/715"' >> ~/.bashrc
+        echo 'alias poll="hpt pack && hpt scan && /usr/local/sbin/binkd -cp /etc/binkd/binkd.cfg -P2:5020/715 && hpt toss && hpt link && htick toss"' >> ~/.bashrc
         /usr/local/sbin/fido/makeGoldedConfig
         /usr/local/sbin/fido/makeBinkdConfig
         /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf

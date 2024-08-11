@@ -4,7 +4,7 @@ fido:
 	docker exec -i -t --privileged fido bash
 
 golded:
-	luit -encoding KOI8-R docker exec -i -t --privileged fido bash -c "/usr/local/sbin/fido/makeGoldedConfig && golded -C/var/config/golded.cfg"
+	luit -encoding KOI8-R docker exec -i -t --privileged fido bash -c "/usr/local/sbin/fido/makeGoldedConfig && /usr/local/sbin/fido/goldnodeCompileNodelist && golded -C/var/config/golded.cfg"
 
 up:
 	docker compose up -d

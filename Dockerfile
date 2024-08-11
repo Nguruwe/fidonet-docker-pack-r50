@@ -24,6 +24,7 @@ RUN    apt update && \
         libncurses-dev \
         libncurses5 \
         sudo \
+iputils-ping \
         supervisor
 
 RUN    export FIDOCONFIG="/etc/fido/config/config.cfg"
