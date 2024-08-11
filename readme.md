@@ -33,3 +33,6 @@
 	- hptutil - does not work, core dumped :-(( Use sqpack to purge/pack bases
 	- sqpack - purge/pack bases, eg: sqpack dupe netmail
 - Run 'make golded' to open golded session in docker container
+
+### Known issues:
+- GoldED+ crash widescreen terminal session if try nodelist access.
