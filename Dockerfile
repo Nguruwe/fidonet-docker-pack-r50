@@ -24,14 +24,26 @@ RUN    apt update && \
         libncurses-dev \
         libncurses5 \
         sudo \
+    build-essential \
+    cmake \
+#git \
+    libjson-c-dev \
+    libwebsockets-dev \
 iputils-ping \
+locales \
         supervisor
+
+COPY   ./etc/locale.gen /etc/locale.gen
+RUN    locale-gen
+ENV    LANG ru_RU.KOI8-R
+ENV    LANGUAGE ru_RU.KOI8-R
+ENV    LC_ALL ru_RU.KOI8-R
 
 RUN    export FIDOCONFIG="/etc/fido/config/config.cfg"
 
 RUN    mkdir /var/log/fido
 
-RUN adduser --disabled-password --shell /bin/bash --gecos "User" fido
+RUN    adduser --disabled-password --shell /bin/bash --gecos "User" fido
 RUN    cd /home/fido && \
          sudo -u fido wget https://raw.githubusercontent.com/huskyproject/huskybse/master/script/init_build && \
          chmod 0755 init_build && \
@@ -53,6 +65,12 @@ RUN    cd /tmp && \
 RUN    cd /home/fido && \
         wget https://github.com/golded-plus/golded-plus/releases/download/golded-plus-1.1.5-20180707-1/golded-plus-1.1.5-20180707-Linux.x86_64.deb && \
         dpkg -i golded-plus-1.1.5-20180707-Linux.x86_64.deb
+
+RUN    cd /home/fido && \
+        sudo -u fido git clone https://github.com/tsl0922/ttyd.git && \
+        cd ttyd && sudo -u fido mkdir build && cd build && \
+        cmake .. && make && make install
+
 
 RUN mkdir -p /var/log/supervisor
 

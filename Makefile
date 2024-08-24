@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 
 fido:
-	docker exec -i -t --privileged fido bash
+#	LC_ALL=ru_RU.KOI8-R docker exec -i -t --privileged fido bash
+	luit -encoding KOI8-R docker exec -i -t --privileged fido bash
 
 golded:
 	luit -encoding KOI8-R docker exec -i -t --privileged fido bash -c "/usr/local/sbin/fido/makeGoldedConfig && /usr/local/sbin/fido/goldnodeCompileNodelist && golded -C/var/config/golded.cfg"
